@@ -1,3 +1,4 @@
+from ast import Pass
 from game.card import Card
 
 class Dealer:
@@ -11,6 +12,7 @@ class Dealer:
     def __init__(self):
         """Constructs a new Dealer instance.
         """
+        Pass
 
     def get_draw(self):
         """Asks the user to guess if the next card drawn will be higher or lower.
@@ -18,6 +20,7 @@ class Dealer:
         Args:
             self (Director): an isntance of the Director.
         """
+        Pass
 
     def replay(self):
             """Asks the user if they'd like to play again after each round.
@@ -25,10 +28,13 @@ class Dealer:
             Args:
                 self (Director): an isntance of the Director.
             """
+            Pass
+
     def do_output(self):
             """Displays the card drawn and current score.
             
             Args:
                 self (Director): an isntance of the Director.
             """
+            Pass
 
