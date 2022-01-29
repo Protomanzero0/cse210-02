@@ -12,7 +12,9 @@ class Dealer:
     def __init__(self):
         """Constructs a new Dealer instance.
         """
-        Pass
+        self.users_guess = ""
+        self.play_again = ""
+        self.run_game = True
 
     def get_draw(self):
         """Asks the user to guess if the next card drawn will be higher or lower.
@@ -20,7 +22,9 @@ class Dealer:
         Args:
             self (Director): an isntance of the Director.
         """
-        Pass
+        self.users_guess = input("Higher or Lower: ")
+        return self.users_guess
+
 
     def replay(self):
             """Asks the user if they'd like to play again after each round.
@@ -28,13 +32,17 @@ class Dealer:
             Args:
                 self (Director): an isntance of the Director.
             """
-            Pass
+            self.play_again = input("Do you want to play again (y/n): ")
+            if self.play_again == "n":
+                self.run_game = False
+            return self.run_game
 
-    def do_output(self):
+
+    def do_output(self, game):
             """Displays the card drawn and current score.
             
             Args:
                 self (Director): an isntance of the Director.
             """
-            Pass
+            print(game.card)
 
