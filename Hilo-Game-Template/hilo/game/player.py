@@ -1,5 +1,6 @@
 from ast import Pass
 from game.dealer import Dealer
+dealer = Dealer
 
 class Player:
     """One who plays the game.
@@ -14,17 +15,31 @@ class Player:
     def __init__(self):
         """Constructs a new Player instance.
         """
-        points = 300
-        can_play = True
+        self.points = 300
+        self.can_play = True
 
-    def do_update(self):
+    def do_update(self, guess, card_val, next_card, points):
         """Updates the player's score.
         
         Args:
             self (Director): an instance of the Director.
         """
-        Pass
+
+        if guess == "L" and card_val > next_card:
+           points += 100
+        elif guess == "H" and card_val < next_card:
+            points += 100
+        elif card_val == next_card:
+            points += 0
+        else:
+            points -= 75
+        return points
     
     def check_points(self, points):
         """Checks if player still has enough points to play."""
-        Pass
+        
+        if points > 0:
+            can_play = True
+        else:
+            can_play = False
+        return can_play
