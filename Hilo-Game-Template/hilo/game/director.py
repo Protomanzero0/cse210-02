@@ -8,36 +8,33 @@ card = Card
 player = Player
 
 class Director:
-    """A person who directs the game.
+    """
+    A person who directs the game.
     
     The responsibility of the Director is to control the program event order.
     
     Attributes:
         playing (boolean): Whether or not the game is being played. 
+
     """
 
     def __init__(self):
-        """Constructs a new Director instance. 
+        """
+        Constructs a new Director instance. 
         
         Args:
-            self (Director): an isntance of the Director.
+            self (Director): an instance of the Director.
         """
 
         
         self.play = True
     
-    # def playing(self):
-    #     play = self.play
-    #     if dealer.replay(dealer) == True:
-    #         play = True
-    #     return play
-
-    
     def start_game(self):
-        """Starts the main game loop.
+        """
+        Starts the main game loop.
         
         Args:
-            self (Director): an isntance of the Director.
+            self (Director): an instance of the Director.
         """
         card_val = card.draw(card)
         points = 300
@@ -51,7 +48,6 @@ class Director:
             points = player.do_update(player, guess, card_val, next_card, points)
             print(f"Your score is: {points}")
             self.play = dealer.replay(dealer)
-            # self.play = player.check_points(player, points)
             card_val = next_card
             print()
 
