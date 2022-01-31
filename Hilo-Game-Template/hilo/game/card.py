@@ -10,6 +10,7 @@ class Card:
     """
 
 
+
     def __init__(self):
         """Makes a new instance of Card.
 
@@ -25,3 +26,7 @@ class Card:
             self (Card): An instance of Card.
         """
         self.value = random.randint(1,13)
+
+    def display_card(self):
+        '''This prints the value of the card'''
+        print(f'The card is: {self.value}')

@@ -1,4 +1,3 @@
-from ast import Pass
 from game.card import Card
 
 class Dealer:
@@ -9,40 +8,43 @@ class Dealer:
     Attributes:
         valid_input (Bool): Checks if player input is valid
         """
+
+
     def __init__(self):
         """Constructs a new Dealer instance.
         """
-        self.users_guess = ""
-        self.play_again = ""
         self.run_game = True
 
-    def get_draw(self):
+    def guess_draw(self):
         """Asks the user to guess if the next card drawn will be higher or lower.
         
         Args:
-            self (Director): an isntance of the Director.
+            self (dealer): an instance of the Dealer.
         """
-        self.users_guess = input("Higher or Lower: ")
-        return self.users_guess
+        users_guess = input("Higher or Lower [h/l]: ")
+        return users_guess.lower()
 
 
     def replay(self):
             """Asks the user if they'd like to play again after each round.
             
             Args:
-                self (Director): an isntance of the Director.
+                self (dealer): an instance of the Dealer.
             """
-            self.play_again = input("Do you want to play again (y/n): ")
-            if self.play_again == "n":
+            play_again = input("Do you want to play again (y/n): ")
+            if play_again == "n":
                 self.run_game = False
             return self.run_game
 
 
-    def do_output(self, game):
+    def draw_card(self):
             """Displays the card drawn and current score.
             
             Args:
-                self (Director): an isntance of the Director.
+                self (dealer): an instance of the Dealer.
             """
-            print(game.card)
+            card = Card()
+            card.draw()
+            card.display_card()
+            return card.value
 
